@@ -102,7 +102,7 @@ function Skills() {
         <h2
             className="
           text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold
-          mb-6 px-2 sm:px-4 md:px-0 text-white max-w-7xl mx-auto
+          mb-6 px-4 sm:px-6 md:px-0 text-white max-w-7xl mx-auto
           sticky top-0 bg-black z-20
           md:static md:bg-transparent
         "
@@ -114,12 +114,13 @@ function Skills() {
         <Particles
             particleColors={["#ffffff", "#ffffff"]}
             particleCount={200}
-            particleSpread={10}
+            particleSpread={window.innerWidth < 768 ? 100 : 10}  // spread wider on mobile
             speed={0.1}
             particleBaseSize={100}
             moveParticlesOnHover={true}
             alphaParticles={false}
             disableRotation={false}
+            className="absolute inset-0 z-0"
         />
 
         {/* Scroll container with padding top to avoid overlap under sticky header */}
