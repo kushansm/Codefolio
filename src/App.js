@@ -9,6 +9,10 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+<<<<<<< Updated upstream
+=======
+  NavLink,
+>>>>>>> Stashed changes
 } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Aos from "aos";
