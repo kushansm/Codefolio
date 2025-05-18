@@ -41,14 +41,18 @@ function TechIcon({ src, alt }) {
   };
 
   return (
-    <div
-      className="transition-transform duration-300 ease-in-out hover:scale-125 animate-zoom"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      ref={iconRef}
-    >
-      <img src={src} alt={alt} className="w-20 h-20 object-contain" />
-    </div>
+      <div
+          className="transition-transform duration-300 ease-in-out hover:scale-125 animate-zoom"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          ref={iconRef}
+      >
+        <img
+            src={src}
+            alt={alt}
+            className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+        />
+      </div>
   );
 }
 
@@ -93,37 +97,40 @@ const skillCategories = [
 
 function Skills() {
   return (
-    <div className="w-full h-screen relative bg-black overflow-hidden p-8">
-      
-      <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 px-4 sm:px-6 md:px-16 text-white">
-        My TechStack
-      </h2>
+      <div className="w-full min-h-screen relative bg-black overflow-hidden p-4 sm:p-8">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2 sm:px-4 md:px-0 text-white max-w-7xl mx-auto">
+          My TechStack
+        </h2>
 
-      <Particles
-        particleColors={["#ffffff", "#ffffff"]}
-        particleCount={200}
-        particleSpread={10}
-        speed={0.1}
-        particleBaseSize={100}
-        moveParticlesOnHover={true}
-        alphaParticles={false}
-        disableRotation={false}
-      />
+        <Particles
+            particleColors={["#ffffff", "#ffffff"]}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
+        />
 
-
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center gap-16 text-white overflow-y-auto">
-        {skillCategories.map((category, idx) => (
-          <div key={idx} className="flex flex-col items-center w-full">
-            <h2 className="text-lg font-bold mb-2">{category.title}</h2>
-            <div className="flex flex-wrap gap-8 justify-center px-20">
-              {category.items.map((tech, index) => (
-                <TechIcon key={index} src={tech.src} alt={tech.alt} />
-              ))}
-            </div>
-          </div>
-        ))}
+        <div className="absolute inset-0 z-10 flex flex-col justify-center items-center gap-12 sm:gap-16 px-2 sm:px-4 md:px-16 max-w-7xl mx-auto overflow-y-auto py-4">
+          {skillCategories.map((category, idx) => (
+              <div
+                  key={idx}
+                  className="flex flex-col items-center w-full max-w-5xl"
+              >
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-white">
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap gap-6 sm:gap-8 justify-center">
+                  {category.items.map((tech, index) => (
+                      <TechIcon key={index} src={tech.src} alt={tech.alt} />
+                  ))}
+                </div>
+              </div>
+          ))}
+        </div>
       </div>
-    </div>
   );
 }
 
