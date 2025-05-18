@@ -9,10 +9,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-<<<<<<< Updated upstream
-=======
   NavLink,
->>>>>>> Stashed changes
 } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Aos from "aos";
@@ -26,18 +23,18 @@ function App() {
     });
   }, []);
   return (
-    <Router>
-      <NavBar />
+      <Router>
+        <NavBar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/contacts" element={<Contacts />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/contacts" element={<Contacts />} />
+        </Routes>
+      </Router>
   );
 }
 
