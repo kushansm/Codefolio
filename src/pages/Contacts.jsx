@@ -58,7 +58,14 @@ export default function Contacts() {
             </div>
 
             {/* Content */}
-            <div className={`p-8 flex ${showOnlyEarth ? "justify-center" : "md:flex-row justify-center"} items-center gap-20 min-h-[calc(100vh-60px)] z-20 relative transition-all duration-700`}>
+            <div
+                className={`
+          p-8 flex
+          ${showOnlyEarth ? "flex-col justify-center" : "flex-col md:flex-row justify-center"}
+          items-center gap-20 min-h-[calc(100vh-60px)] z-20 relative
+          transition-all duration-700
+        `}
+            >
                 {/* Form or Thank You */}
                 {!submitted && (
                     <div className="w-full max-w-md bg-white/80 backdrop-blur-md p-6 rounded-xl shadow-md transition-all duration-700">
@@ -66,7 +73,11 @@ export default function Contacts() {
                             Send Me a Message
                         </h2>
 
-                        <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
+                        <form
+                            ref={form}
+                            onSubmit={sendEmail}
+                            className="flex flex-col gap-4"
+                        >
                             <input
                                 type="text"
                                 name="user_name"
@@ -105,7 +116,14 @@ export default function Contacts() {
                 )}
 
                 {/* Earth */}
-                <div className={`transition-all duration-1000 ease-in-out ${submitted ? "w-full max-w-3xl h-[500px]" : "w-full max-w-md h-[400px]"}`}>
+                <div
+                    className={`
+            transition-all duration-1000 ease-in-out
+            w-full max-w-md h-[400px]
+            md:h-[500px]
+            ${showOnlyEarth ? "max-w-3xl" : "md:w-auto md:max-w-none"}
+          `}
+                >
                     <Canvas
                         camera={{ position: [2, 0, 3], fov: 45 }}
                         gl={{
