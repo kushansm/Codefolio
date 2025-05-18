@@ -96,7 +96,7 @@ function Skills() {
     <div className="w-full h-screen relative bg-black overflow-hidden p-8">
       
       <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 px-4 sm:px-6 md:px-16 text-white">
-        My Techstack
+        My TechStack
       </h2>
 
       <Particles
@@ -115,7 +115,7 @@ function Skills() {
         {skillCategories.map((category, idx) => (
           <div key={idx} className="flex flex-col items-center w-full">
             <h2 className="text-lg font-bold mb-2">{category.title}</h2>
-            <div className="flex flex-wrap gap-8 justify-center px-4">
+            <div className="flex flex-wrap gap-8 justify-center px-20">
               {category.items.map((tech, index) => (
                 <TechIcon key={index} src={tech.src} alt={tech.alt} />
               ))}
