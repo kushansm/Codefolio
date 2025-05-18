@@ -98,7 +98,16 @@ const skillCategories = [
 function Skills() {
   return (
       <div className="w-full min-h-screen relative bg-black overflow-hidden p-4 sm:p-8">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2 sm:px-4 md:px-0 text-white max-w-7xl mx-auto">
+        {/* Sticky heading on mobile, static on md+ */}
+        <h2
+            className="
+          text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold
+          mb-6 px-2 sm:px-4 md:px-0 text-white max-w-7xl mx-auto
+          sticky top-0 bg-black z-20
+          md:static md:bg-transparent
+        "
+            style={{ WebkitBackdropFilter: "blur(8px)", backdropFilter: "blur(8px)" }}
+        >
           My TechStack
         </h2>
 
@@ -113,12 +122,16 @@ function Skills() {
             disableRotation={false}
         />
 
-        <div className="absolute inset-0 z-10 flex flex-col justify-center items-center gap-12 sm:gap-16 px-2 sm:px-4 md:px-16 max-w-7xl mx-auto overflow-y-auto py-4">
+        {/* Scroll container with padding top to avoid overlap under sticky header */}
+        <div
+            className="
+          absolute inset-0 z-10 flex flex-col justify-center items-center gap-12 sm:gap-16
+          px-2 sm:px-4 md:px-16 max-w-7xl mx-auto overflow-y-auto py-4
+          pt-[5.5rem] md:pt-0
+        "
+        >
           {skillCategories.map((category, idx) => (
-              <div
-                  key={idx}
-                  className="flex flex-col items-center w-full max-w-5xl"
-              >
+              <div key={idx} className="flex flex-col items-center w-full max-w-5xl">
                 <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-white">
                   {category.title}
                 </h3>

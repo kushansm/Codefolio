@@ -84,7 +84,13 @@ function Experience() {
                       </div>
 
                       {/* Center circle with logo */}
-                      <div className="absolute md:left-1/2 md:transform md:-translate-x-1/2 top-[-32px] md:top-1/2 md:translate-y-[-50%] w-16 h-16 bg-white border-4 border-blue-500 rounded-full shadow flex items-center justify-center z-30 mx-auto md:mx-0 my-4 md:my-0">
+                      <div
+                          className="absolute md:left-1/2 md:transform md:-translate-x-1/2
+                    top-[-32px] md:top-1/2 md:translate-y-[-50%]
+                    w-16 h-16 bg-white border-4 border-blue-500 rounded-full shadow
+                    flex items-center justify-center z-30
+                    mx-auto md:mx-0 mb-6 md:mb-0"
+                      >
                         <img
                             src={exp.logo}
                             alt="logo"
@@ -101,7 +107,13 @@ function Experience() {
                       <div className="hidden md:block md:w-1/2" />
 
                       {/* Center circle with logo */}
-                      <div className="absolute md:left-1/2 md:transform md:-translate-x-1/2 top-[-32px] md:top-1/2 md:translate-y-[-50%] w-16 h-16 bg-white border-4 border-blue-500 rounded-full shadow flex items-center justify-center z-30 mx-auto md:mx-0 my-4 md:my-0">
+                      <div
+                          className="absolute md:left-1/2 md:transform md:-translate-x-1/2
+                    top-[-32px] md:top-1/2 md:translate-y-[-50%]
+                    w-16 h-16 bg-white border-4 border-blue-500 rounded-full shadow
+                    flex items-center justify-center z-30
+                    mx-auto md:mx-0 mb-6 md:mb-0"
+                      >
                         <img
                             src={exp.logo}
                             alt="logo"
