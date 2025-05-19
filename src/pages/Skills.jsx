@@ -11,7 +11,6 @@ import Sp from "../assets/tech-stack/spring.svg";
 import Nd from "../assets/tech-stack/node.png";
 import Bs from "../assets/tech-stack/bootstrap.png";
 import Tw from "../assets/tech-stack/tailwind.png";
-
 import Gh from "../assets/tech-stack/github.png";
 import Docker from "../assets/tech-stack/docker.png";
 import Mysql from "../assets/tech-stack/mysql.png";
@@ -98,6 +97,20 @@ const skillCategories = [
 function Skills() {
   return (
       <div className="w-full min-h-screen relative bg-black overflow-hidden p-4 sm:p-8">
+        {/* Fullscreen Particles Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Particles
+              particleColors={["#ffffff", "#ffffff"]}
+              particleCount={200}
+              particleSpread={window.innerWidth < 768 ? 100 : 10}
+              speed={0.1}
+              particleBaseSize={100}
+              moveParticlesOnHover={true}
+              alphaParticles={false}
+              disableRotation={false}
+          />
+        </div>
+
         {/* Sticky heading on mobile, static on md+ */}
         <h2
             className="
@@ -111,23 +124,11 @@ function Skills() {
           My TechStack
         </h2>
 
-        <Particles
-            particleColors={["#ffffff", "#ffffff"]}
-            particleCount={200}
-            particleSpread={window.innerWidth < 768 ? 100 : 10}  // spread wider on mobile
-            speed={0.1}
-            particleBaseSize={100}
-            moveParticlesOnHover={true}
-            alphaParticles={false}
-            disableRotation={false}
-            className="absolute inset-0 z-0"
-        />
-
-        {/* Scroll container with padding top to avoid overlap under sticky header */}
+        {/* Content */}
         <div
             className="
-          absolute inset-0 z-10 flex flex-col justify-center items-center gap-12 sm:gap-16
-          px-2 sm:px-4 md:px-16 max-w-7xl mx-auto overflow-y-auto py-4
+          relative z-10 flex flex-col justify-center items-center gap-12 sm:gap-16
+          px-2 sm:px-4 md:px-16 max-w-7xl mx-auto py-4
           pt-[5.5rem] md:pt-0
         "
         >
@@ -136,7 +137,7 @@ function Skills() {
                 <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-white">
                   {category.title}
                 </h3>
-                <div className="flex flex-wrap gap-6 sm:gap-8 justify-center">
+                <div className="flex flex-wrap gap-20 sm:gap-20 justify-center">
                   {category.items.map((tech, index) => (
                       <TechIcon key={index} src={tech.src} alt={tech.alt} />
                   ))}
