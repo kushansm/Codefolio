@@ -116,14 +116,14 @@ export default function Contacts() {
                 )}
 
                 {/* Earth */}
-                <div
-                    className={`
+                    <div
+                        className={`
             transition-all duration-1000 ease-in-out
-            w-full max-w-md h-[400px]
+            w-full h-[400px]
             md:h-[500px]
-            ${showOnlyEarth ? "max-w-3xl" : "md:w-auto md:max-w-none"}
-          `}
-                >
+            ${showOnlyEarth ? "max-w-5xl mx-auto" : "max-w-2xl md:mx-0"}
+            `}
+                    >
                     <Canvas
                         camera={{ position: [2, 0, 3], fov: 45 }}
                         gl={{
