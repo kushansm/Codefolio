@@ -3,7 +3,6 @@ import Aurora from "../components/animations/Aurora";
 import profile from "../assets/profile-pic-slider/profile.jpeg";
 import photo2 from "../assets/profile-pic-slider/profile1.jpeg";
 import photo3 from "../assets/profile-pic-slider/profile3.jpeg";
-import photo7 from "../assets/profile-pic-slider/profile7.jpeg";
 
 import Services from "./Services";
 import Experience from "./Experience";
@@ -18,7 +17,7 @@ import TiltedCard from "../components/TiltedCard";
 
 function Home() {
     // Prepare photos array for the slider
-    const photos = [photo2, photo3, profile, photo7];
+    const photos = [photo2, photo3, profile];
 
     return (
         <>
